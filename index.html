@@ -4,80 +4,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Instagram Feed</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/084be6e3a4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <div class="ms-auto">
+                <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#createPostModal">Crear Nuevo Post</button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-cog"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-start">
+                        <li><a class="dropdown-item" href="#">Perfil</a></li>
+                        <li><a class="dropdown-item" href="#">Accesibilidad</a></li>
+                        <li><a class="dropdown-item" href="#">Datos y Privacidad</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#">Salir</a></li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Action
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navigation Pills -->
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="justify-content: center;">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-grid-tab" data-bs-toggle="pill" data-bs-target="#pills-grid" type="button" role="tab" aria-controls="pills-grid" aria-selected="true">
+                <i class="fa fa-th"></i>
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-post-tab" data-bs-toggle="pill" data-bs-target="#pills-post" type="button" role="tab" aria-controls="pills-post" aria-selected="false">
+                <i class="fa fa-square"></i>
+            </button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="pills-tabContent">
+        <!-- First Grid -->
+        <div class="tab-pane fade show active" id="pills-grid" role="tabpanel" aria-labelledby="pills-grid-tab">
+            <div class="container mt-4">
+                <div class="row row-cols-1 row-cols-md-3 g-2">
+                    <!-- Repeated images -->
+                    <div class="col">
+                        <div class="ratio ratio-1x1">
+                            <img src="https://www.photolari.com/wp-content/uploads/2021/11/roland-kranitz-finalista.jpeg" class="img-fluid rounded" alt="Placeholder Image">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="ratio ratio-1x1">
+                            <img src="https://qiarg.org/wp-content/uploads/2024/01/Portada-3.jpg" class="img-fluid rounded" alt="Placeholder Image">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="ratio ratio-1x1">
+                            <img src="https://ep01.epimg.net/verne/imagenes/2018/12/29/album/1546080783_597424_1546081005_album_normal.jpg" class="img-fluid rounded" alt="Placeholder Image">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="ratio ratio-1x1">
+                            <img src="https://www.tubebebox.com/modules/ph_simpleblog/covers/125.jpg" class="img-fluid rounded" alt="Placeholder Image">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="ratio ratio-1x1">
+                            <img src="https://www.lavanguardia.com/files/image_449_220/files/fp/uploads/2022/10/20/63514db4cf05f.r_d.1463-984-1497.jpeg" class="img-fluid rounded" alt="Placeholder Image">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="ratio ratio-1x1">
+                            <img src="https://static.elnortedecastilla.es/www/multimedia/202111/17/media/MM-fotos-animales-divertidos/Andy%20Parkinson_Let%27s%20Dance.jpg" class="img-fluid rounded" alt="Placeholder Image">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="ratio ratio-1x1">
+                            <img src="https://statics.forbes.com.ec/2024/01/crop/65941df2608fa__600x390.webp" class="img-fluid rounded" alt="Placeholder Image">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="ratio ratio-1x1">
+                            <img src="https://naturaleza360.com/wp-content/uploads/2024/01/%C2%BFCuales-son-los-tipos-de-la-naturaleza.jpg" class="img-fluid rounded" alt="Placeholder Image">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="ratio ratio-1x1">
+                            <img src="https://www.ecoavant.com/uploads/s1/28/20/68/imagen-de-que-es-la-naturaleza.webp" class="img-fluid rounded" alt="Placeholder Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Grid -->
+        <div class="tab-pane fade" id="pills-post" role="tabpanel" aria-labelledby="pills-post-tab">
+            <div class="container mt-5">
+                <!-- Repeated posts -->
+                <div class="card mb-4">
+                    <div class="card-body d-flex justify-content-between">
+                        <h5 class="card-title">Paisaje lindo</h5>
+                        <p class="card-text text-end text-muted">12/23</p>
+                    </div>
+                    <img src="https://png.pngtree.com/thumb_back/fh260/background/20230511/pngtree-nature-background-sunset-wallpaer-with-beautiful-flower-farms-image_2592160.jpg" class="card-img-top" alt="Main Post Image">
+                    <div class="card-body">
+                        <p class="fw-bold">204 Likes</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-body d-flex justify-content-between">
+                        <h5 class="card-title">Lindo Paisaje</h5>
+                        <p class="card-text text-end text-muted">11/23</p>
+                    </div>
+                    <img src="https://media.istockphoto.com/id/1403500817/es/foto/los-craggies-en-las-monta%C3%B1as-blue-ridge.jpg?s=612x612&w=0&k=20&c=Z-MwaW-16JT72Wup9Cs7I5FhGfp6fgiGH8k6l23R07o=" class="card-img-top" alt="Main Post Image">
+                    <div class="card-body">
+                        <p class="fw-bold">180 Likes</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-body d-flex justify-content-between">
+                        <h5 class="card-title">Arbol Lindo</h5>
+                        <p class="card-text text-end text-muted">10/23</p>
+                    </div>
+                    <img src="https://www.importancia.cc/wp-content/uploads/2023/02/naturaleza.jpg" class="card-img-top" alt="Main Post Image">
+                    <div class="card-body">
+                        <p class="fw-bold">150 Likes</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Post Modal -->
+    <div class="modal fade" id="createPostModal" tabindex="-1" aria-labelledby="createPostModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createPostModalLabel">Crear Nuevo Post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="postDescription" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="postDescription" rows="3" placeholder="Escribe una descripción..."></textarea>
+                        </div>
+                        <div class="mb-3 d-flex gap-2">
+                            <button type="button" class="btn btn-outline-secondary">
+                                <i class="fa fa-camera"></i>
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-start custom-dropdown">
-                                <style>
-                                    .custom-dropdown {
-                                        right: 0;
-                                        left: auto;
-                                    }
-                                </style>
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
+                            <button type="button" class="btn btn-outline-secondary">
+                                <i class="fa fa-map-marker"></i>
+                            </button>
                         </div>
                     </form>
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Publicar</button>
+                </div>
             </div>
-        </nav>
-    </div>
-    <div>
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="justify-content: center;">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-                    type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-                    <i class="fa-light fa-table-cells"></i>
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-                    type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
-            </li>
-        </ul>
-        <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
-                tabindex="0">...</div>
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
-                tabindex="0">...</div>
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
-                tabindex="0">...</div>
-            <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab"
-                tabindex="0">...</div>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
